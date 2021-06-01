@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- DataTables -->
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet" />
+     <!----- sweetalert ----->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- styles -->
+    <link rel="stylesheet" href="styles.css" />
+    <title>Autenticacion</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                data-mdb-target="#AgregarCliente" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="AgregarCliente">
+                <!-- Navbar brand -->
+                <a class="navbar-brand mt-2 ms-5 mt-lg-0" href="#">
+                    <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="15" alt=""
+                        loading="lazy" />
+                </a>
+                <!-- Left links -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Principal.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ciudad.html">City</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Help</a>
+                    </li>
+                </ul>
+                <!-- Left links -->
+            </div>
+            <!-- Search -->
+            <form class="d-flex input-group w-auto me-2">
+                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                    aria-describedby="search-addon" />
+                <span class="input-group-text border-0" id="search-addon">
+                    <i class="fas fa-search"></i>
+                </span>
+            </form>
+            <!--FIN Search -->
+            <!-- Collapsible wrapper -->
+            <!-- Right elements -->
+            <div class="d-flex align-items-center">
+                <!-- Icon -->
+                <!-- Notifications -->
+                <a class="text-reset me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
+                    role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge rounded-pill badge-notification bg-danger">1</span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                    <li>
+                        <a class="dropdown-item" href="#">Some news</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">Another news</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                </ul>
+
+                <!-- Avatar -->
+                <a class="dropdown-toggle d-flex align-items-center hidden-arrow me-5" href="#"
+                    id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                    <img src="https://mdbootstrap.com/img/new/avatars/2.jpg" class="rounded-circle" height="25" alt=""
+                        loading="lazy" />
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end Perfil-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li>
+                        <a class="dropdown-item" href="#">My profile</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">Settings</a>
+                    </li>
+                    <li class="sesion">
+                 
+                    </li>
+                </ul>
+            </div>
+            <!-- Right elements -->
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+    <!--Fin Navbar -->
+
+    
+    <div class="container mt-5">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary mb-4 OpenModal" data-mdb-toggle="modal" data-mdb-target="#Agregar">
+            <i class="fas fa-user-alt me-2"></i>Agregar
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="Agregar" data-mdb-backdrop="static" data-mdb-keyboard="false" tabindex="-1"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Registro Usuario</h5>
+                        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="modal-body">
+
+                        <form id="Formulario">
+                            <div class="form-outline col-md-4 mb-4">
+                                <input type="text" id="Codigo" class="form-control" />
+                                <label class="form-label text-primary fw-bold" for="Codigo">Codigo</label>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <input type="text" id="Name" class="form-control" />
+                                        <label class="form-label text-primary fw-bold" for="Name">Nombre</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <input type="text" id="LastName" class="form-control" />
+                                        <label class="form-label text-primary fw-bold" for="LastName">Apellido</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 mb-4">
+                                    <div class="form-outline">
+                                        <input type="text" id="Address" class="form-control" />
+                                        <label class="form-label text-primary fw-bold" for="Address">Direccion</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <select class="form-select " id="Estado">
+                                        <option selected>--- Selected ---</option>
+                                        <option value="Casado">Casado</option>
+                                        <option value="Soltero">Soltero</option>
+                                        <option value="Divorciado">Divorciado</option>
+                                        <option value="Viudo">Viudo</option>
+
+                                    </select>
+                                    <label class="form-label">Estado</label>
+                                </div>
+
+                                <div class="col-md-6 mb-4">
+                                    <label class="me-2">Genero : </label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="genero"
+                                            id="Hombre" value="Hombre" />
+                                        <label class="form-check-label" for="inlineRadio1">Hombre</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input " type="radio" name="genero"
+                                            id="Mujer" value="Mujer" />
+                                        <label class="form-check-label" for="inlineRadio2">Mujer</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <select class="form-select " id="city">
+                                       
+                                      
+
+                                    </select>
+                                    <label class="form-label">Ciudad</label>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <input type="email" id="email" class="form-control" />
+                                        <label class="form-label text-primary fw-bold" for="Email">Email</label>
+                                    </div>
+                                </div>
+                            </div>
+                           
+
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-mdb-dismiss="modal">
+                            Close
+                        </button>
+                        <button type="submit" id="btnSave" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Fin Modal -->
+
+        <table id="example" class="table table-responsive table-striped table-bordered" style="width:100%">
+            <thead class="table-dark">
+                <tr>
+                    <th>CODIGO</th>
+                    <th>FIRST NAME</th>
+                    <th>LAST NAME</th>
+                    <th>ADDRESS</th>
+                    <th>ESTADO</th>
+                    <th>GENDER</th>
+                    <th>CITY</th>
+                    <th>EMAIL</th>
+                    <th>ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody class="Listado">
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+     <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js"></script>
+   <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyC-S7NsdVQ-HL2jO2FWtXWHPfJ5GclbxJs",
+            authDomain: "registro-usuarios-3e4a6.firebaseapp.com",
+            projectId: "registro-usuarios-3e4a6",
+            storageBucket: "registro-usuarios-3e4a6.appspot.com",
+            messagingSenderId: "927119319762",
+            appId: "1:927119319762:web:ac837229ac51910500030b",
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+    
+    <script src=" https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>
